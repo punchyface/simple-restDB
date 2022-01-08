@@ -176,9 +176,9 @@ $(document).ready(function () {
   function updateForm(id, contactName, contactEmail, contactMsg) {
     //@TODO create validation methods for id etc. 
      
-    tocheck("update-contact-name", "update-area");
-    tocheck("update-contact-email", "update-area");
-    tocheck("update-contact-msg", "update-area");
+    tocheck("update-contact-name", "update-error");
+    tocheck("update-contact-email", "update-error");
+    tocheck("update-contact-msg", "update-error");
     
     
     
