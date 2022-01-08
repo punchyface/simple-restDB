@@ -244,6 +244,7 @@ $(document).ready(function () {
 
 })
 
+//validator
 function tocheck(idcheck, area) {
   const inpObj = document.getElementById(idcheck);
   if (!inpObj.checkValidity()) {
