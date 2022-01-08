@@ -12,6 +12,10 @@ $(document).ready(function () {
   $("#contact-submit").on("click", function (e) {
     //prevent default action of the button 
     e.preventDefault();
+    
+    tocheck("contact-name", "add-error");
+    tocheck("contact-email", "add-error");
+    tocheck("contact-msg", "add-error");
 
     //[STEP 2]: let's retrieve form data
     //for now we assume all information is valid
@@ -171,16 +175,10 @@ $(document).ready(function () {
   //UPDATE Based on the ID chosen
   function updateForm(id, contactName, contactEmail, contactMsg) {
     //@TODO create validation methods for id etc. 
-    function tocheck(idcheck) {
-      const inpObj = document.getElementById(idcheck);
-      if (!inpObj.checkValidity()) {
-        document.getElementById("update-error").innerHTML = inpObj.validationMessage;
-        throw new Error();
-      } 
-    }  
-    tocheck("update-contact-name");
-    tocheck("update-contact-email");
-    tocheck("update-contact-msg");
+     
+    tocheck("update-contact-name", "update-area");
+    tocheck("update-contact-email", "update-area");
+    tocheck("update-contact-msg", "update-area");
     
     
     
@@ -246,3 +244,10 @@ $(document).ready(function () {
 
 })
 
+function tocheck(idcheck, area) {
+  const inpObj = document.getElementById(idcheck);
+  if (!inpObj.checkValidity()) {
+    document.getElementById(area).innerHTML = inpObj.validationMessage;
+    throw new Error();
+  } 
+} 
