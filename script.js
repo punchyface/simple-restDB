@@ -1,3 +1,5 @@
+//github link: https://punchyface.github.io/simple-restDB/
+
 //[STEP 0]: Make sure our document is A-OK
 $(document).ready(function () {
   //what kind of interface we want at the start 
