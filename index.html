@@ -14,30 +14,37 @@
   <body>
 
     <div class="container">
-      <h1>Simple Contact Form System</h1>
+      <h1>Simple student Form System</h1>
       <div id="add-update-msg">
         <div class="alert alert-success" role="alert">
-          Contact record successfully added
+          student record successfully added
         </div>
       </div>
-      <div class="form" id="add-contact">
-        <form id="add-contact-form">
+      <div class="form" id="add-student">
+        <form id="add-student-form">
           <div class="form-group">
-            <label for="contact-name">Name</label>
-              <input type="text" id="contact-name" class="form-control" required>
+            <label for="student-id">Student ID</label>
+            <input type="text" pattern="[A-Z][0-9]{8}[A-Z]" id="student-id" class="form-control" required></input>
+          </div>
+          <div class="form-group">
+            <label for="student-name">Name</label>
+              <input type="text" id="student-name" class="form-control" required>
             </div>
             <div class="form-group">
-              <label for="contact-email">Email</label>
-              <input type="email" id="contact-email" class="form-control" required>
-              <small id="contact-email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <label for="student-email">Email</label>
+              <input type="email" id="student-email" class="form-control" required>
+              <small id="student-email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-              <label for="contact-msg">Message</label>
-              <textarea id="contact-msg" class="form-control" required>
-              </textarea>
+              <label for="student-class">Class</label>
+              <input type="text" id="student-class" class="form-control" required></input>
+            </div>
+            <div class="form-group">
+              <label for="mentorName">Mentor Name</label>
+              <input type="text" id="mentorName" class="form-control" required>
             </div>
 
-            <input type="submit" value="Send" class="btn btn-primary" id="contact-submit">
+            <input type="submit" value="Send" class="btn btn-primary" id="student-submit">
         </form>
       </div>
       <div id="add-error"></div>
@@ -54,12 +61,14 @@
       <div class="spinner-grow text-light"></div>
     </div>
     <div class="container mt-5">
-      <h2>Table information of Contacts (<span id="total-contacts"></span>)</h2>
-      <table class="table" id="contact-list">
+      <h2>Table information of students (<span id="total-students"></span>)</h2>
+      <table class="table" id="student-list">
         <thead>
+          <th>Student ID</th>
           <th>Name</th>
           <th>Email</th>
-          <th>Message</th>
+          <th>Class</th>
+          <th>Mentor Name</th>
           <th colspan="2">Actions</th>
           
         </thead>
@@ -68,30 +77,38 @@
       </table>
     </div>
   
-    <div class="container mt-5" id="update-contact-container"> 
+    <div class="container mt-5" id="update-student-container"> 
     <div id="add-update-msg">
       <div class="alert alert-success" role="alert">
-        Contact record updated sucessfully
+        student record updated sucessfully
       </div>
 		</div>
-    <h4>Update Contact</h4>
-    <div class="form" id="update-contact">
-			<form id="update-contact-form">
+    <h4>Update student</h4>
+    <div class="form" id="update-student">
+			<form id="update-student-form">
+        <div class="form-group">
+          <label for="update-student-id">Student ID</label>
+          <input type="text" pattern="[A-Z][0-9]{8}[A-Z]" id="update-student-id" class="form-control" required>
+        </div>
 				<div class="form-group">
-					<label for="update-contact-name">Name</label>
-          <input type="text" id="update-contact-name" class="form-control" required>
+					<label for="update-student-name">Name</label>
+          <input type="text" id="update-student-name" class="form-control" required>
         </div>
         <div class="form-group">
-          <label for="update-contact-email">Email</label>
-          <input type="email" id="update-contact-email" class="form-control" required>
-          <small id="update-contact-email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <label for="update-student-email">Email</label>
+          <input type="email" id="update-student-email" class="form-control" required>
+          <small id="update-student-email-help" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-          <label for="update-contact-msg">Message</label>
-          <textarea id="update-contact-msg" class="form-control" required></textarea>
-          <input type="hidden" id="update-contact-id">
+          <label for="update-student-class">Class</label>
+          <input type="text" id="update-student-class" class="form-control" required>
         </div>
-        <input type="submit" value="Update Contact Details" class="btn btn-warning" id="update-contact-submit">
+        <div class="form-group">
+          <label for="update-mentorName">Mentor Name</label>
+          <input id="update-mentorName" class="form-control" required>
+          <input type="hidden" id="update-sys-id">
+        </div>
+        <input type="submit" value="Update student Details" class="btn btn-warning" id="update-student-submit">
       </form>
     </div>
     <div id="update-error"></div>
